@@ -13,15 +13,15 @@ Runtime=Clr
 ```
  |            Method |          Job |       Jit | Platform |       Mean |    StdErr |    StdDev |
  |------------------ |------------- |---------- |--------- |----------- |---------- |---------- |
- |            Equals | LegacyJitX64 | LegacyJit |      X64 | 10.4266 ns | 0.0090 ns | 0.0338 ns |
- |       GetHashCode | LegacyJitX64 | LegacyJit |      X64 | 47.9099 ns | 0.0912 ns | 0.3533 ns |
- |      EqualsCached | LegacyJitX64 | LegacyJit |      X64 |  4.2168 ns | 0.0070 ns | 0.0260 ns |
- | GetHashCodeCached | LegacyJitX64 | LegacyJit |      X64 | 25.2044 ns | 0.0407 ns | 0.1576 ns |
- |            Equals | LegacyJitX86 | LegacyJit |      X86 |  9.6312 ns | 0.0323 ns | 0.1252 ns |
- |       GetHashCode | LegacyJitX86 | LegacyJit |      X86 | 46.9868 ns | 0.4833 ns | 2.1065 ns |
- |      EqualsCached | LegacyJitX86 | LegacyJit |      X86 |  3.9719 ns | 0.0330 ns | 0.1279 ns |
- | GetHashCodeCached | LegacyJitX86 | LegacyJit |      X86 | 20.4734 ns | 0.0514 ns | 0.1925 ns |
- |            Equals |    RyuJitX64 |    RyuJit |      X64 |  9.6321 ns | 0.0123 ns | 0.0476 ns |
- |       GetHashCode |    RyuJitX64 |    RyuJit |      X64 | 40.7101 ns | 0.0525 ns | 0.2035 ns |
- |      EqualsCached |    RyuJitX64 |    RyuJit |      X64 |  2.9862 ns | 0.0035 ns | 0.0130 ns |
- | GetHashCodeCached |    RyuJitX64 |    RyuJit |      X64 | 14.9397 ns | 0.1623 ns | 0.7073 ns |
+ |            Equals | LegacyJitX64 | LegacyJit |      X64 | 13.3058 ns | 0.0159 ns | 0.0596 ns |
+ |       GetHashCode | LegacyJitX64 | LegacyJit |      X64 | 53.3942 ns | 0.1326 ns | 0.5136 ns |
+ |      EqualsCached | LegacyJitX64 | LegacyJit |      X64 |  9.6589 ns | 0.0504 ns | 0.1952 ns |
+ | GetHashCodeCached | LegacyJitX64 | LegacyJit |      X64 | 26.9144 ns | 0.0585 ns | 0.2267 ns |
+ |            Equals | LegacyJitX86 | LegacyJit |      X86 | 12.3289 ns | 0.0479 ns | 0.1856 ns |
+ |       GetHashCode | LegacyJitX86 | LegacyJit |      X86 | 47.6645 ns | 0.1320 ns | 0.5112 ns |
+ |      EqualsCached | LegacyJitX86 | LegacyJit |      X86 |  8.4311 ns | 0.1175 ns | 0.4843 ns |
+ | GetHashCodeCached | LegacyJitX86 | LegacyJit |      X86 | 27.1333 ns | 0.1024 ns | 0.3966 ns |
+ |            Equals |    RyuJitX64 |    RyuJit |      X64 | 11.5519 ns | 0.0509 ns | 0.1970 ns |
+ |       GetHashCode |    RyuJitX64 |    RyuJit |      X64 | 46.0448 ns | 0.3826 ns | 1.4817 ns |
+ |      EqualsCached |    RyuJitX64 |    RyuJit |      X64 |  5.4152 ns | 0.0092 ns | 0.0358 ns |
+ | GetHashCodeCached |    RyuJitX64 |    RyuJit |      X64 | 16.4995 ns | 0.0323 ns | 0.1163 ns |

@@ -26,6 +26,9 @@ namespace ConsoleApp7
 
     public class ValueTuplePerformance
     {
+        private IEqualityComparer<ValueTuple<int, float, bool, decimal>> comparer = EqualityComparer<ValueTuple<int, float, bool, decimal>>.Default;
+        private IEqualityComparer<ValueTupleCached<int, float, bool, decimal>> comparerCached = EqualityComparer<ValueTupleCached<int, float, bool, decimal>>.Default;
+
         private ValueTuple<int, float, bool, decimal> a = ValueTuple.Create(10, 1, true, 0.1m);
         private ValueTuple<int, float, bool, decimal> b = ValueTuple.Create(11, 2, false, 0.2m);
 
@@ -39,25 +42,25 @@ namespace ConsoleApp7
         [Benchmark]
         public void Equals()
         {
-            a.Equals(b);
+            comparer.Equals(a, b);
         }
 
         [Benchmark]
         public void GetHashCode()
         {
-            b.GetHashCode();
+            comparer.GetHashCode(b);
         }
 
         [Benchmark]
         public void EqualsCached()
         {
-            a1.Equals(b1);
+            comparerCached.Equals(a1, b1);
         }
 
         [Benchmark]
         public void GetHashCodeCached()
         {
-            b1.GetHashCode();
+            comparerCached.GetHashCode(a1);
         }
     }
 

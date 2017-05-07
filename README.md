@@ -1,27 +1,34 @@
 ``` ini
 
-BenchmarkDotNet=v0.10.3.0, OS=Microsoft Windows NT 6.2.9200.0
-Processor=Intel(R) Core(TM) i7-4770 CPU 3.40GHz, ProcessorCount=8
-Frequency=3318387 Hz, Resolution=301.3512 ns, Timer=TSC
-  [Host]       : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1637.0
-  LegacyJitX64 : Clr 4.0.30319.42000, 64bit LegacyJIT/clrjit-v4.6.1637.0;compatjit-v4.6.1637.0
-  LegacyJitX86 : Clr 4.0.30319.42000, 32bit LegacyJIT-v4.6.1637.0
-  RyuJitX64    : Clr 4.0.30319.42000, 64bit RyuJIT-v4.6.1637.0
+BenchmarkDotNet=v0.10.5, OS=Windows 10.0.14393
+Processor=Intel Core m3-6Y30 CPU 0.90GHz, ProcessorCount=4
+Frequency=1476563 Hz, Resolution=677.2484 ns, Timer=TSC
+  [Host]     : Clr 4.0.30319.42000, 64bit RyuJIT-v4.6.1637.0
+  DefaultJob : Clr 4.0.30319.42000, 64bit RyuJIT-v4.6.1637.0
 
-Runtime=Clr  
 
 ```
- |            Method |          Job |       Jit | Platform |       Mean |    StdErr |    StdDev |
- |------------------ |------------- |---------- |--------- |----------- |---------- |---------- |
- |            Equals | LegacyJitX64 | LegacyJit |      X64 | 13.3058 ns | 0.0159 ns | 0.0596 ns |
- |       GetHashCode | LegacyJitX64 | LegacyJit |      X64 | 53.3942 ns | 0.1326 ns | 0.5136 ns |
- |      EqualsCached | LegacyJitX64 | LegacyJit |      X64 |  9.6589 ns | 0.0504 ns | 0.1952 ns |
- | GetHashCodeCached | LegacyJitX64 | LegacyJit |      X64 | 26.9144 ns | 0.0585 ns | 0.2267 ns |
- |            Equals | LegacyJitX86 | LegacyJit |      X86 | 12.3289 ns | 0.0479 ns | 0.1856 ns |
- |       GetHashCode | LegacyJitX86 | LegacyJit |      X86 | 47.6645 ns | 0.1320 ns | 0.5112 ns |
- |      EqualsCached | LegacyJitX86 | LegacyJit |      X86 |  8.4311 ns | 0.1175 ns | 0.4843 ns |
- | GetHashCodeCached | LegacyJitX86 | LegacyJit |      X86 | 27.1333 ns | 0.1024 ns | 0.3966 ns |
- |            Equals |    RyuJitX64 |    RyuJit |      X64 | 11.5519 ns | 0.0509 ns | 0.1970 ns |
- |       GetHashCode |    RyuJitX64 |    RyuJit |      X64 | 46.0448 ns | 0.3826 ns | 1.4817 ns |
- |      EqualsCached |    RyuJitX64 |    RyuJit |      X64 |  5.4152 ns | 0.0092 ns | 0.0358 ns |
- | GetHashCodeCached |    RyuJitX64 |    RyuJit |      X64 | 16.4995 ns | 0.0323 ns | 0.1163 ns |
+ |            Method |      Mean |     Error |    StdDev |    Median |
+ |------------------ |----------:|----------:|----------:|----------:|
+ |            Equals | 20.685 ns | 0.4669 ns | 0.7131 ns | 20.244 ns |
+ |       GetHashCode | 79.314 ns | 1.6269 ns | 2.2807 ns | 79.630 ns |
+ |      EqualsCached |  8.415 ns | 0.2338 ns | 0.5603 ns |  8.435 ns |
+ | GetHashCodeCached | 30.641 ns | 0.6582 ns | 1.3592 ns | 31.058 ns |
+
+``` ini
+
+BenchmarkDotNet=v0.10.5, OS=Windows 10.0.14393
+Processor=Intel Core m3-6Y30 CPU 0.90GHz, ProcessorCount=4
+Frequency=1476563 Hz, Resolution=677.2484 ns, Timer=TSC
+dotnet cli version=1.0.3
+  [Host]     : .NET Core 4.6.25009.03, 64bit RyuJIT
+  DefaultJob : .NET Core 4.6.25009.03, 64bit RyuJIT
+
+
+```
+ |            Method |     Mean |     Error |    StdDev |   Median |
+ |------------------ |---------:|----------:|----------:|---------:|
+ |            Equals | 14.09 ns | 0.2348 ns | 0.1553 ns | 14.06 ns |
+ |       GetHashCode | 53.14 ns | 0.8117 ns | 0.7196 ns | 53.14 ns |
+ |      EqualsCached | 13.69 ns | 0.3298 ns | 0.8455 ns | 13.40 ns |
+ | GetHashCodeCached | 37.12 ns | 0.6052 ns | 0.5053 ns | 36.97 ns |

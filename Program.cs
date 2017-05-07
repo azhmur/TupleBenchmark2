@@ -17,10 +17,7 @@ namespace ConsoleApp7
         static void Main(string[] args)
         {
             var summary = BenchmarkRunner.Run<ValueTuplePerformance>(
-                ManualConfig.Create(DefaultConfig.Instance)
-                    .With(Job.RyuJitX64)
-                    .With(Job.LegacyJitX64)
-                    .With(Job.LegacyJitX86));
+                ManualConfig.Create(DefaultConfig.Instance));
         }
     }
 
